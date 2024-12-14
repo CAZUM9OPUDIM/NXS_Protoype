@@ -1,13 +1,14 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
+const specificGuild = await interaction.client.guilds.fetch('1075808627673284648');
+const specificGuildIcon = specificGuild.iconURL();
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('server')
 		.setDescription('Provides information about the server.'),
 	async execute(interaction) {
 		// Buscar a guild pelo ID
-		const specificGuild = await interaction.client.guilds.fetch('1075808627673284648');
-		const specificGuildIcon = specificGuild.iconURL();
+
 
 		const guildOwner = await interaction.guild.fetchOwner();
 		const guildIcon = interaction.guild.iconURL();
@@ -26,8 +27,10 @@ module.exports = {
 				{ name: 'Server Owner', value: `${guildOwner.user.tag} (ID: ${guildOwner.id})`, inline: true }
 			)
 			.setTimestamp()
-			.setFooter({ text: 'Pudim Software.', iconURL: specificGuildIcon });
+			.setFooter({ text: 'NXS Developement Team.', iconURL: specificGuildIcon });
 
 		await interaction.reply({ embeds: [serverEmbed] });
 	},
 };
+// TODO: remake icon and other stuff ... 
+// TODO: make a separated info about NXS server and etc...

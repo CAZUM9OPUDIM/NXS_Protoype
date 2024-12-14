@@ -48,6 +48,3 @@ const guildId = "1075808627673284648";
 	}
 })();
 
-rest.put(Routes.applicationGuildCommands(process.env.clientId, guildId), { body: [] })
-	.then(() => console.log('Successfully deleted all guild commands.'))
-	.catch(console.error);
