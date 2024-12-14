@@ -7,7 +7,7 @@
     "discord.js": "^14.15.3",
     "dotenv": "^16.4.5"
   },
-  "name": "asgis_beta",
+  "name": "NXS_Protoype",
   "version": "1.0.0",
   "description": "Discord bot",
   "main": "index.js",
