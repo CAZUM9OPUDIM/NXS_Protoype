@@ -31,3 +31,4 @@ module.exports = {
 		await interaction.reply({ embeds: [serverEmbed] });
 	},
 };
+// this was bigger but DUE TO FUCKING GIT EVERYTHING GONE... anyways i don't really care i'm leaving discordjs and nodejs for backends anyways , thank you all.

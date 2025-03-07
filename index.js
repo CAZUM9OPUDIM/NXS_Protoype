@@ -30,18 +30,45 @@ for (const folder of commandFolders) {
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
+let loadedCount = 0;
+let ignoredCount = 0;
+
 for (const file of eventFiles) {
+
+
 	const filePath = path.join(eventsPath, file);
 	const event = require(filePath);
-	if (event.once) {
-		client.once(event.name, (...args) => event.execute(...args));
-	} else {
-		client.on(event.name, (...args) => event.execute(...args));
+	switch (event.ignore) {
+		case true :
+			ignoredCount++;
+		break;
+		default:
+			loadedCount++;
+			if (event.once) {
+				client.once(event.name, (...args) => event.execute(...args));
+			} else {
+				client.on(event.name, (...args) => event.execute(...args));
+			}
 	}
-}
-client.login(process.env.token)
 
-client.once(Events.ClientReady, readyclient => {
-    client.user.setPresence({ activities: [{ name: 'Discord.js V14.15.3', type: ActivityType.Listening}], status: PresenceUpdateStatus.DoNotDisturb  });
+
+}
+console.log(`Loaded ${loadedCount} event(s).`);
+console.log(`Ignored ${ignoredCount} event(s).`);
+
+client.login(process.env.token)
+/**
+const command_refrest = fs.readdirSync('./deploy-commands.js')
+
+ client.once(Events.ClientReady, readyclient => {
+
+	command_refrest.execute()
+
 }
 );
+**/ 
+
+client.once(Events.ClientReady, readyclient => {
+    client.user.setPresence({ activities: [{ name: 'Discord.js V14.15.3', type: ActivityType.Listening}], /**status: PresenceUpdateStatus.DoNotDisturb **/ });
+}
+); 
