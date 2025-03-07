@@ -3,7 +3,7 @@
 made in Discord.js 14
 
 > [!NOTE]
-> Unused bot originally for NXS Discord Server now discontinnued due to a mass demotion drama...
+> Unused bot originally for NXS Discord Server now discontinued due to a mass demotion drama...
 ----------------------------------------------------
 
 # installation
