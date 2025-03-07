@@ -1,4 +1,4 @@
-NXS test bot
+# NXS test bot
 
 made in Discord.js 14
 
@@ -22,7 +22,7 @@ npm install
 ```
 ### Running
 > [!IMPORTANT]
-> Setup .env files containing token and the ClientID required to work.
+> Setup .env files containing Bot token and the ClientID required to work.
 
 ```bash
 node .
