@@ -9,7 +9,7 @@ made in Discord.js 14
 # installation
 > [!CAUTION]
 > Please note that this is a discontinued VERY basic bot , i would recommend making your own, as this hasn't been tested for months and is archived.
-> all discord bot related projects will now be made in discord.py.
+> all discord bot related projects will now be made in discord.py.(I might return to discord.js after I finish py stuff maybe...)
 ### Cloning repository
 - git installed required
 ```bash
